@@ -17,4 +17,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/omni_vince.mk
+	$(LOCAL_DIR)/omni_potter.mk
