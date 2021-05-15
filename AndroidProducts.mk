@@ -17,4 +17,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/omni_potter.mk
+	$(LOCAL_DIR)/omni_A33f.mk
+
+COMMON_LUNCH_CHOICES := \
+    lineage_pine-user \
+    omni_A33f-userdebug \
+    omni_A33f-eng

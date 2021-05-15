@@ -1,25 +1,16 @@
-import init.target.recovery.rc
+on init
+    # encryption support
+    chmod 0660 /dev/qseecom
+    chown system drmrpc /dev/qseecom
+    chmod 0664 /dev/ion
+    chown system system /dev/ion
 
-# separate copy needed to use /sbin/linker instead of /system/bin/linker
-service sbinqseecomd /sbin/qseecomd
-    oneshot
+service qseecomd /sbin/qseecomd
+    class core
     disabled
     user root
-    group root
+    group root system drmrpc
     seclabel u:r:recovery:s0
 
 on property:ro.crypto.state=encrypted
-    start sbinqseecomd
-
-on init
-    chmod 0777 /dev/qseecom
-    chown system mot_tpapi /dev/qseecom
-    chmod 0664 /dev/ion
-    chown system system /dev/ion
-    mkdir /vendor/firmware
-    mkdir /vendor/firmware/keymaster
-    symlink /firmware/image/keymaster.b00 /vendor/firmware/keymaster/keymaster.b00
-    symlink /firmware/image/keymaster.b01 /vendor/firmware/keymaster/keymaster.b01
-    symlink /firmware/image/keymaster.b02 /vendor/firmware/keymaster/keymaster.b02
-    symlink /firmware/image/keymaster.b03 /vendor/firmware/keymaster/keymaster.b03
-    symlink /firmware/image/keymaster.mdt /vendor/firmware/keymaster/keymaster.mdt
+    start qseecomd

@@ -33,8 +33,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := potter
-PRODUCT_NAME := omni_potter
-PRODUCT_BRAND := motorola
-PRODUCT_MODEL := Moto G5 Plus
-PRODUCT_MANUFACTURER := motorola
+PRODUCT_DEVICE := A33f
+PRODUCT_NAME := omni_A33f
+PRODUCT_BRAND := OPPO
+PRODUCT_MODEL := OPPO A33f
+PRODUCT_MANUFACTURER := OPPO

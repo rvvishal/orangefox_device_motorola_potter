@@ -18,6 +18,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),potter)
+ifeq ($(TARGET_DEVICE),A33f)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
